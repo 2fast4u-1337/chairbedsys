@@ -42,8 +42,8 @@ CreateThread(function()
 			local objectcoords = GetEntityCoords(objects.object)
 			if GetDistanceBetweenCoords(objectcoords.x, objectcoords.y, objectcoords.z,getPlayerCoords) < 1.8 and not using then
 				if objects.isBed == true then
-					DrawText3Ds(objectcoords.x, objectcoords.y, objectcoords.z+0.30, "~g~E~w~, за да легнете по "..anim)
-					DrawText3Ds(objectcoords.x, objectcoords.y, objectcoords.z+0.20, "~w~ Завъртете се по гръб или корем със ~g~стрелките")
+					DrawText3Ds(objectcoords.x, objectcoords.y, objectcoords.z+0.30, "~g~E~w~, за да легнете по "..anim) -- "Use key to lay on back/stomach"
+					DrawText3Ds(objectcoords.x, objectcoords.y, objectcoords.z+0.20, "~w~ Завъртете се по гръб или корем със ~g~стрелките") -- Use arrows to lay on back/stomach
 					if IsControlJustPressed(0, 175) then -- right
 						animscroll = animscroll+1
 						if animscroll == 0 then
@@ -72,7 +72,7 @@ CreateThread(function()
 						PlayAnimOnPlayer(objects.object,objects.ObjectVertX,objects.ObjectVertY,objects.ObjectVertZ,objects.OjbectDir, objects.isBed, player, objectcoords)
 					end
 				else
-					DrawText3Ds(objectcoords.x, objectcoords.y, objectcoords.z+0.30, " ~g~G~w~, за да седнете")
+					DrawText3Ds(objectcoords.x, objectcoords.y, objectcoords.z+0.30, " ~g~G~w~, за да седнете") -- Use key to get up
 					if IsControlJustPressed(0, 58) then
 						PlayAnimOnPlayer(objects.object,objects.ObjectVertX,objects.ObjectVertY,objects.ObjectVertZ,objects.OjbectDir, objects.isBed, player, objectcoords)
 					end
